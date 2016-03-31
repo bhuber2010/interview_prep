@@ -1,6 +1,6 @@
-// import {sum2fromArray} from '../../problems/sum2fromArray';
-var should = require('chai').should();
-var sumArray = require('../../problems/compiled/sum2fromArray.js').sumArray;
+import {sumArray} from '../../problems/sum2fromArray';
+import * as chai from 'chai';
+let should = chai.should();
 
 (function () {
   'use strict';
