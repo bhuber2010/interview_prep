@@ -15,7 +15,7 @@ let should = chai.should();
         sumArray([6, 4, 9, 2, 1], 4).should.equal(false);
       })
     });
-    describe('cases when it should return the two numbers that sum to the result', function(){
+    describe('cases when it should return the two numbers that sum to the result (or true)', function(){
       it('should return true, 1 + 3 = 4', function(){
         sumArray([1,2,3], 4).should.equal(true);
       });
