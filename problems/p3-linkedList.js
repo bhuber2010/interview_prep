@@ -49,10 +49,26 @@ export class linkedList {
   }
 
   removeNode(position) {
+    let pos = 1;
+    let prev = null;
+    let curr = this.head;
 
+    while(pos < position) {
+      prev = curr;
+      curr = curr.next;
+      pos++;
+    }
+
+    if (pos != 1) {prev.next = curr.next};
+
+    if (curr === this.head) {this.head = curr.next};
+    if (curr === this.tail) {this.tail = prev};
+
+    return curr;
   }
 
-  printList(node) {
+  printList() {
+    let node = this.head;
     while (node != null) {
       console.log(node.value);
       node = node.next;

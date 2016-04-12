@@ -6,7 +6,7 @@ let expect = chai.expect;
 export function p3() {
   'use strict';
 
-  describe('P3 - creating a linkedList', function(){
+  describe('P3 - creating a linkedList, ', function(){
 
     describe('creates an empty linked list', function(){
       var emptyList = new linkedList();
@@ -52,7 +52,6 @@ export function p3() {
       var aList = new linkedList({value: 5});
 
       it('should return the only node with value 5', function(){
-        console.log(aList.searchForNode(1));
         aList.searchForNode(1).value.should.equal(5);
       })
 
@@ -71,12 +70,25 @@ export function p3() {
 
     describe('removing a node from the list', function(){
 
-      var aList = new linkedList({value: 5});
-      aList.addNode(6);
-      aList.addNode(7);
-      aList.addNode(8);
+      var aList;
 
-      it('')
+      beforeEach(function() {
+        aList = new linkedList({value: 5});
+        aList.addNode(6);
+        aList.addNode(7);
+        aList.addNode(8);
+      });
+
+      it('should remove the first node in the list', function(){
+        aList.removeNode(1);
+        aList.head.value.should.equal(6);
+        aList.searchForNode(1).value.should.equal(6);
+      })
+
+      it('should remove the last node in the list', function(){
+        aList.removeNode(aList.count).value.should.equal(8);
+        aList.tail.value.should.equal(7);
+      })
     })
 
   })
