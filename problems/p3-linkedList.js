@@ -64,6 +64,8 @@ export class linkedList {
     if (curr === this.head) {this.head = curr.next};
     if (curr === this.tail) {this.tail = prev};
 
+    this.count--;
+
     return curr;
   }
 

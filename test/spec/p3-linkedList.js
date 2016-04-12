@@ -88,6 +88,7 @@ export function p3() {
       it('should remove the last node in the list', function(){
         aList.removeNode(aList.count).value.should.equal(8);
         aList.tail.value.should.equal(7);
+        aList.count.should.equal(3);
       })
     })
 
