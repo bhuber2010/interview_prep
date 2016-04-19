@@ -94,6 +94,31 @@ export function p3() {
         aList.tail.value.should.equal(7);
         aList.count.should.equal(3);
       })
+
+      xit('should throw an error as the position is not valid in the list', function(){
+        expect(aList.removeNode(8)).to.throw(Error);
+      })
+    })
+
+    describe('printing the list', function(){
+
+      var aList;
+
+      beforeEach(function() {
+        aList = new linkedList({value: 5});
+        aList.addNode(6);
+        aList.addNode(7);
+        aList.addNode(8);
+      });
+
+      it('should print out the current list', function(){
+        aList.printList().should.have.members([5,6,7,8]);
+      })
+
+      it('should return an empty array/list', function(){
+        aList = new linkedList();
+        aList.printList().should.be.empty;
+      })
     })
 
   })

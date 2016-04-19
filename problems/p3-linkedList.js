@@ -53,6 +53,10 @@ export class linkedList {
     let prev = null;
     let curr = this.head;
 
+    if (position < 0 || position > this.count) {
+      throw new Error("not a valid position");
+    }
+
     while(pos < position) {
       prev = curr;
       curr = curr.next;
@@ -71,9 +75,12 @@ export class linkedList {
 
   printList() {
     let node = this.head;
+    let list = [];
     while (node != null) {
-      console.log(node.value);
+      list.push(node.value);
       node = node.next;
     }
+    // console.log(list);
+    return list;
   }
 }
