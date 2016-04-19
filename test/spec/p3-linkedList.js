@@ -95,6 +95,16 @@ export function p3() {
         aList.count.should.equal(3);
       })
 
+      it('should remove the only node and set head/tail to null', function(){
+        aList.removeNode(4);
+        aList.removeNode(3);
+        aList.removeNode(2);
+        aList.removeNode(1);
+        expect(aList.head).to.equal(null);
+        expect(aList.tail).to.equal(null);
+        expect(aList.count).to.equal(0);
+      })
+
       xit('should throw an error as the position is not valid in the list', function(){
         expect(aList.removeNode(8)).to.throw(Error);
       })

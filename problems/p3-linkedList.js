@@ -11,7 +11,11 @@ export class linkedList {
   }
 
   Node(value) {
-    return {value: value};
+    return {
+      prev: null,
+      value: value,
+      next: null
+    };
   }
 
   addNode(value) {
@@ -30,6 +34,7 @@ export class linkedList {
     }
 
     currentNode.next = newNode;
+    newNode.prev = currentNode;
     this.tail = newNode;
     this.count++;
     return newNode;
@@ -63,10 +68,17 @@ export class linkedList {
       pos++;
     }
 
-    if (pos != 1) {prev.next = curr.next};
+    if (pos != 1) {
+      prev.next = curr.next;
+      if (!this.tail) curr.next.prev = prev;
+    };
 
-    if (curr === this.head) {this.head = curr.next};
-    if (curr === this.tail) {this.tail = prev};
+    if (curr === this.head) {
+      this.count > 1 ? this.head = curr.next : this.head = null;
+    };
+    if (curr === this.tail) {
+      this.count > 1 ? this.tail = prev : this.tail = null;
+    };
 
     this.count--;
 
