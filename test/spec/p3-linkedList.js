@@ -48,7 +48,6 @@ export function p3() {
       it('should increase the count property (length) of the list', function(){
         aList.count.should.equal(2);
       })
-
     })
 
     describe('finds a node gien a position in the list', function(){

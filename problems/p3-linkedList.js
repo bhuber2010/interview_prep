@@ -29,9 +29,10 @@ export class linkedList {
       return newNode;
     }
 
-    while (currentNode.next) {
-      currentNode = currentNode.next;
-    }
+    currentNode = this.tail;
+    // while (currentNode.next) {
+    //   currentNode = currentNode.next;
+    // }
 
     currentNode.next = newNode;
     newNode.prev = currentNode;
