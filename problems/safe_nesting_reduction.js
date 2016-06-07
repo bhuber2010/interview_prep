@@ -39,21 +39,21 @@ const Polo = {
 const dogs = [Reese, Sasha, Polo];
 
 function parentsName(dog) {
-  let dad = "parents.dad.name".split(".").reduce(function(obj, field, i, path){
-    if (obj) {
-      return obj[field];
-    }
-    return `No ${path[i - 1]}`;
-  }, dog)
+  const paths = [
+    "parents.dad.name",
+    "parents.mom.name"
+  ];
 
-  let mom = "parents.mom.name".split(".").reduce(function(obj, field, i, path){
-    if (obj) {
-      return obj[field];
-    }
-    return `No ${path[i - 1]}`;
-  }, dog)
+  const names = paths.map(function(path){
+    return path.split(".").reduce(function(obj, field, i, path){
+      if (obj) {
+        return obj[field];
+      }
+      return `No ${path[i - 1]}`;
+    }, dog)
+  })
 
-  return `${dad}, ${mom}`;
+  return `${names[0]}, ${names[1]}`;
 }
 
 dogs.forEach(dog => console.log(`${dog.name}: Parents names: ${parentsName(dog)}`))
