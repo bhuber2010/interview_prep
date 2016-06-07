@@ -10,8 +10,12 @@ let initial_value = 1;
 
 const pipeline = [
   increment,
+  increment,
+  increment,
   double,
-  decrement
+  increment,
+  increment,
+  halve
 ];
 
 const final_value = pipeline.reduce((acc, fn) => {
