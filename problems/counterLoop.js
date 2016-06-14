@@ -24,6 +24,7 @@ var fns = [];
 //
 // fns[2]();
 
+// IIFE solution
 
 for(var i = 0; i < elements.length; i++) {
   (function(i){
@@ -33,4 +34,15 @@ for(var i = 0; i < elements.length; i++) {
   })(i)
 }
 
+console.log("IIFE:");
+fns[6]()
+
+// ES2015 solution using let (block scope)
+
+for(let i = 0; i < elements.length; i++) {
+  fns.push(function() {
+    console.log(i);
+  })
+}
+console.log("ES2015:");
 fns[6]();
