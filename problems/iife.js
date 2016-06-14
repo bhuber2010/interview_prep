@@ -19,7 +19,7 @@ var counter = (function(){
 // methods.
 
 console.log(counter.get()); // 0
-console.log(counter.set(3));
+console.log(counter.set(3)); // 3
 console.log(counter.increment()); // 4
 console.log(counter.increment()); // 5
 console.log(counter.get()); // 5
