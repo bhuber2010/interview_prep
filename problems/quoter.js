@@ -21,7 +21,6 @@ Quoter.prototype.getQuote = function(quantity) {
   }
 
   let quote = quoteCompile(this.items, quantity);
-  console.log("quote:", quote);
 
   return `Your best quote for ${quantity} items is ${quote.toFixed(2)}`
 
@@ -29,10 +28,11 @@ Quoter.prototype.getQuote = function(quantity) {
 
 function quoteCompile(items, quantity){
   let bestItem = bestItemFinder(items, quantity);
-  let unitPrice = bestItem.unitPrice ? bestItem.unitPrice : 0;
+  let unitPrice = bestItem.unitPrice || 0;
   let currentQuantity = quantity > bestItem.quantity ? bestItem.quantity : quantity;
   let sum = currentQuantity * unitPrice;
   quantity -= currentQuantity;
+  console.log(`${currentQuantity} at ${unitPrice}`);
   if (quantity <= 0) {
     return sum
   } else {
@@ -46,9 +46,14 @@ function bestItemFinder(array, quantity){
   if (array.length === 0 || quantity === 0) return 0;
   array.forEach((item, i, arr) => {
     if (bestItem) {
-      if (item.unitMargin > bestItem.unitMargin) {
-        bestItem = item
-        biIndex = i
+      if (item.unitMargin >= bestItem.unitMargin) {
+        if (item.unitMargin === bestItem.unitMargin && item.unitPrice > bestItem.unitPrice) {
+          bestItem = item
+          biIndex = i
+        } else if (item.unitMargin > bestItem.unitMargin) {
+          bestItem = item
+          biIndex = i
+        }
       }
     } else {
       bestItem = item
@@ -61,8 +66,8 @@ function bestItemFinder(array, quantity){
 
 // var quoter = new Quoter([{quantity: 10, unitPrice: 100, unitMargin: 1}, {quantity: 10, unitPrice: 110, unitMargin: 1.1}]);
 // var quoter = new Quoter([]);
-var quoter = new Quoter([{quantity: 10, unitPrice: 100, unitMargin: 1.1}, {quantity: 10, unitPrice: 110, unitMargin: 1}]);
+// var quoter = new Quoter([{quantity: 10, unitPrice: 100, unitMargin: 1.1}, {quantity: 10, unitPrice: 110, unitMargin: 1}]);
+var quoter = new Quoter([{quantity: 10, unitPrice: 120, unitMargin: 1.1}, {quantity: 10, unitPrice: 130, unitMargin: 1.1}]);
 
 
-
-console.log(quoter.getQuote(15));
+console.log(quoter.getQuote(10));
