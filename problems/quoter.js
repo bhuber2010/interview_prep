@@ -67,7 +67,7 @@ function bestItemFinder(array, quantity){
 // var quoter = new Quoter([{quantity: 10, unitPrice: 100, unitMargin: 1}, {quantity: 10, unitPrice: 110, unitMargin: 1.1}]);
 // var quoter = new Quoter([]);
 // var quoter = new Quoter([{quantity: 10, unitPrice: 100, unitMargin: 1.1}, {quantity: 10, unitPrice: 110, unitMargin: 1}]);
-var quoter = new Quoter([{quantity: 10, unitPrice: 120, unitMargin: 1.1}, {quantity: 10, unitPrice: 130, unitMargin: 1.1}]);
+var quoter = new Quoter([{quantity: 10, unitPrice: 300, unitMargin: 1}, {quantity: 10, unitPrice: 130, unitMargin: 3}, {quantity: 10, unitPrice: 120, unitMargin: 2}]);
 
 
 console.log(quoter.getQuote(10));
