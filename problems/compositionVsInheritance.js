@@ -42,7 +42,10 @@ const barker = (state) => ({
 })
 
 const driver = (state) => ({
-  drive: () => state.position = state.position + state.speed
+  drive: () => state.position = state.position + state.speed,
+  getPosition: () => state.position,
+  getSpeed: () => state.speed,
+  setSpeed: (speed) => state.speed = speed
 })
 
 const killer = (state) => ({
@@ -59,7 +62,13 @@ const murderRobotDog = (name) => {
     toKill: "Wait! I dont kill"
   }
 
-  return Object.assign(state, barker(state), driver(state), killer(state))
+  let accessor = {
+    getName: () => console.log(state.name)
+  }
+
+  return Object.assign(accessor, barker(state), driver(state), killer(state))
 }
 
-console.log(murderRobotDog("MRG"));
+const rmd = murderRobotDog("MRD");
+
+console.log(rmd);
