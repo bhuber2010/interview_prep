@@ -1,4 +1,4 @@
-require('node-monkey').start({})
+// require('node-monkey').start({})
 
 // one method
 
@@ -36,6 +36,6 @@ Grizzly2.prototype.growl = () => console.log("Im a Grizzly... grrrr");
 const grizzly2 = new Grizzly2()
 const polar2 = new Bear2("polar")
 
-console.log("Grizzly: ", grizzly2.growl());
+console.log("Grizzly: ", grizzly2.__proto__);
 
 console.log("Polar: ", polar2);
