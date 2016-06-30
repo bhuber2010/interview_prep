@@ -1,11 +1,11 @@
-let clientData = {
+const clientData = {
     id: 123,
     fullName: "Not Set",
-    setUserName: function(firstName, lastName){
-      this.fullName = firstName + " " + lastName;
+    setUserName(firstName, lastName) {
+      this.fullName = `${firstName} ${lastName}`;
     }
 }
-function getUserInput(firstName, lastName, callback, cbObj){
+function getUserInput(firstName, lastName, callback, cbObj) {
   // do some stuff
 
   callback.apply(cbObj, [firstName, lastName]);

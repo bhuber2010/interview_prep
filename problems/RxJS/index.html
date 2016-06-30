@@ -3,11 +3,36 @@
 <head>
   <meta charset="utf-8">
   <title>RxJS</title>
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <script src="../bower_components/rxjs/dist/rx.all.js"></script>
+  <div class="container">
+      <div class="header">
+           <h3>Who to follow</h3><a href="#" class="refresh">Refresh</a>
+      </div>
+      <ul class="suggestions">
+          <li class="suggestion">
+              <img />
+              <a href="#" target="_blank" class="username">this will not be displayed</a>
+              <a href="#" class="close close1">x</a>
+          </li>
+          <li class="suggestion">
+              <img />
+              <a href="#" target="_blank" class="username">neither this</a>
+              <a href="#" class="close close2">x</a>
+          </li>
+          <li class="suggestion">
+              <img />
+              <a href="#" target="_blank" class="username">nor this</a>
+              <a href="#" class="close close3">x</a>
+          </li>
+      </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.all.js"></script>
+  <script src="script.js"></script>
 
   <!-- bower:js -->
   <!-- endbower -->

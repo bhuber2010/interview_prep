@@ -1,33 +1,33 @@
 // inheritance
 
-function MurderRobot(){
+function MurderRobot() {
   return {
     drive: () => console.log("Driving"),
     kill: () => console.log("Killing")
   }
 }
 
-function CleaningRobot(){
+function CleaningRobot() {
   return {
     drive: () => console.log("Driving"),
     clean: () => console.log("Cleaning")
   }
 }
 
-function Animal(){
+function Animal() {
   return {
     poop: () => console.log("Pooping")
   }
 }
 
-function Dog(){
+function Dog() {
   this.bark = () => console.log("Barking");
 }
 Dog.prototype = new Animal();
 
 const reeser = new Dog()
 
-function Cat(){
+function Cat() {
   this.meow = () => console.log("Meowing");
 }
 Cat.prototype = new Animal();
