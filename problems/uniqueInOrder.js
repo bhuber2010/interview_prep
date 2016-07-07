@@ -9,7 +9,7 @@ var uniqueInOrder = function(iterable){
     } else {
       return u
     }
-  }, [])
+  }, []).join('')
 }
 
 console.log(uniqueInOrder("AAAABBCAADD"));
