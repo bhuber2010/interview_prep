@@ -1,0 +1,37 @@
+#new-note {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+}
+
+#new-note * {
+  padding: 5px;
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin: 5px;
+  color: white;
+  background: black;
+}
+
+.note-mod {
+  visibility: hidden;
+  /*display: none;*/
+}
+
+button {
+  color: black;
+}
+
+#notes-list {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}

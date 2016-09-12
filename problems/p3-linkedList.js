@@ -29,14 +29,14 @@ export class linkedList {
       return newNode;
     }
 
-    currentNode = this.tail;
+    // currentNode = this.tail;
     // while (currentNode.next) {
     //   currentNode = currentNode.next;
     // }
 
     currentNode.next = newNode;
     newNode.prev = currentNode;
-    this.tail = newNode;
+    this.head = newNode;
     this.count++;
     return newNode;
 

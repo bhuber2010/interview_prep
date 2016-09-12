@@ -22,9 +22,13 @@ export class Stack {
   }
 
   pop() {
-    var oldTop = this.top
-    this.top = this.top.previous
-    this.length -= 1
-    return oldTop
+    if (this.length > 0) {
+      var oldTop = this.top
+      this.top = this.top.previous
+      this.length -= 1
+      return oldTop
+    } else {
+      throw new Error("Your Stack is empty")
+    }
   }
 }

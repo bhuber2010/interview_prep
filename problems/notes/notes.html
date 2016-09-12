@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Notes</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="notes.css">
+  </head>
+  <body>
+
+    <div id="new-note">
+      <input id="noteText" type="text" value="">
+      <div class="dropdown">
+        Color:
+        <select id="colorSelect">
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="blue">Blue</option>
+          <option value="yellow">Yellow</option>
+        </select>
+      </div>
+      <button type="button" name="submit">Add Note</button>
+    </div>
+
+    <div id="notes-list">
+      <div class="note">
+        <p>Test Note</p>
+        <input class="note-mod note-text" type="text" value="">
+        <div>
+          <button type="button" name="modify">Modify</button>
+          <button class="note-mod" type="button" name="update">Update</button>
+          <button type="button" name="delete">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="notes.js"></script>
+  </body>
+</html>
